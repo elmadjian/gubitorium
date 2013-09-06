@@ -34,13 +34,13 @@ my $pcounter = 0;          #"ponteiro" de instrucoes
 
 my $file = "teste.txt";
 #Escrevendo a pilha de instrucoes
-open my $linha, '<', $file or die "Não consegui abrir o arquivo: $!";
-while (<$linha>) {
+open my $FH, '<', $file or die "Não consegui abrir o arquivo: $!";
+while (<$FH>) {
 	chomp;
 	push @programa, $_;
 	#ajustando o ponteiro de instrucoes
 }
-close $linha or die "Não consegui fechar o arquivo: $!";
+close $FH or die "Não consegui fechar o arquivo: $!";
 
 #Testando o array de instrucoes
 foreach my $coisa (@programa) {
@@ -59,9 +59,11 @@ for (my $opcode = "nothing"; $opcode ne "END"; $pcounter++) {
 
 	if ($programa[$pcounter] =~ /([a-zA-Z]{2,4})/) {
 		$opcode = $1;
+		print "OP: $opcode\n";
 	}
 	if ($programa[$pcounter] =~ /([0-9]+)/) {
 		$valor = $1;
+		print "VL: $valor\n";
 	}
 	given ($opcode) {
 		when ('PUSH') {&psh ($valor);}
@@ -84,6 +86,10 @@ for (my $opcode = "nothing"; $opcode ne "END"; $pcounter++) {
 		when ('RCL') {&rcl ($valor);}
 		when ('PRN') {&prn;}
 	}
+	for(my $i = @dados-1; $i >=0; $i--) {print "DADOS[$i]: $dados[$i]\n";}
+	for(my $i = @memoria-1; $i >=0; $i--) {print "MEM[$i]: $memoria[$i]\n";}
+	print "----------\n";
+
 }
 
 #DEBUG...
@@ -114,7 +120,7 @@ sub pp {
 
 #DUP
 sub dup {
-	my $valor = @dados;
+	my $valor = $dados[-1];
 	push @dados, $valor;
 }
 
@@ -150,17 +156,17 @@ sub div {
 #==== Desvios (condicionais ou nao)
 #JMP
 sub jmp {
-	$pcounter = $_[0];
+	$pcounter = $_[0]-1;
 }
 
 #JIT
 sub jit {
-	$pcounter = $_[0] if ((pop @dados) == $TRUE);
+	$pcounter = $_[0]-1 if ((pop @dados) == $TRUE);
 }
 
 #JIF
 sub jif {
-	$pcounter = $_[0] if ((pop @dados) == $FALSE);
+	$pcounter = $_[0]-1 if ((pop @dados) == $FALSE);
 }
 
 #==== Comparacoes
