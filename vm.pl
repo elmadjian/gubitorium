@@ -18,6 +18,7 @@
 #     REVISION: ---
 #===============================================================================
 
+use feature "switch";
 use strict;
 use warnings;
 use utf8;
@@ -27,7 +28,7 @@ my @programa;           #pilha de instrucoes
 my @dados;              #pilha de dados
 my @execucao;           #pilha de execucao
 my @memoria;            #vetor de memoria
-my $topo = 0;           #"ponteiro" de instrucoes
+my $topo = -1;           #"ponteiro" de instrucoes
 
 #==== PROGRAMA ======
 
@@ -49,6 +50,49 @@ foreach my $coisa (@programa) {
 
 
 
+#loop eterno do programa
+for (my $opcode = "nothing"; $opcode ne "END"; $topo--) {
+
+	my $valor;
+
+	if ($programa[$topo] =~ /([a-zA-Z]{3,4})/) {
+		$opcode = $1;
+	}
+	if ($programa[$topo] =~ /([0-9]+)/) {
+		$valor = $1;
+	}
+	given ($opcode) {
+		when ('PUSH') {&psh ($valor);}
+		when ('POP') {&pp;}
+		when ('DUP') {&dup;}
+		when ('ADD') {&add;}
+		when ('SUB') {&sub;}
+		when ('MUL') {&mul;}
+		when ('DIV') {&div;}
+		when ('JMP') {&jmp ($valor);}
+		when ('JIT') {&jit ($valor);}
+		when ('JIF') {&jif ($valor);}
+		when ('EQ')  {&eq;}
+		when ('GT')  {&gt;}
+		when ('GE')  {&ge;}
+		when ('LT')  {&lt;}
+		when ('LE')  {&le;}
+		when ('NE')  {&ne;}
+		when ('STO') {&sto ($valor);}
+		when ('RCL') {&rcl ($valor);}
+		when ('PRN') {&prn;}
+	}
+}
+
+#DEBUG...
+foreach my $treco (@memoria) {
+	print "memoria_ $treco\n";
+}
+foreach my $xis (@dados) {
+	print "dados_ $xis\n";
+}
+
+
 
 
 
@@ -61,7 +105,7 @@ my $FALSE = 0;
 #==== Manipulacao de pilhas
 #PUSH
 sub psh {
-	push @dados, my $valor;
+	push @dados, $_[0];
 }
 
 #POP
@@ -107,17 +151,17 @@ sub div {
 #==== Desvios (condicionais ou nao)
 #JMP
 sub jmp {
-	$topo = my $valor;
+	$topo = $_[0];
 }
 
 #JIT
 sub jit {
-	$topo = my $valor if (pop @dados == $TRUE);
+	$topo = $_[0] if (pop @dados == $TRUE);
 }
 
 #JIF
 sub jif {
-	$topo = my $valor if (pop @dados == $FALSE);
+	$topo = $_[0] if (pop @dados == $FALSE);
 }
 
 #==== Comparacoes
@@ -168,20 +212,19 @@ sub ne {
 #==== Acesso a memoria
 #STO
 sub sto {
-	my $valor;
-	$memoria[$valor] = pop @dados;
+	$memoria[$_[0]] = @dados;
 }
 
 #RCL
 sub rcl {
-	my $valor;
-	push @dados, $memoria[$valor];
+	push @dados, $memoria[$_[0]];
 }
 
 #==== Execucao e Terminal
-#END
+#PRN
 sub prn {
-	print pop @dados;
+	my $valor = pop @dados;
+	print "$valor\n";
 }
 
 
