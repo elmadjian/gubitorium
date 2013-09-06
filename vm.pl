@@ -28,7 +28,7 @@ my @programa;           #pilha de instrucoes
 my @dados;              #pilha de dados
 my @execucao;           #pilha de execucao
 my @memoria;            #vetor de memoria
-my $topo = -1;           #"ponteiro" de instrucoes
+my $pcounter = 0;          #"ponteiro" de instrucoes
 
 #==== PROGRAMA ======
 
@@ -39,7 +39,6 @@ while (<$linha>) {
 	chomp;
 	push @programa, $_;
 	#ajustando o ponteiro de instrucoes
-	$topo++;
 }
 close $linha or die "Não consegui fechar o arquivo: $!";
 
@@ -48,17 +47,20 @@ foreach my $coisa (@programa) {
 	print "$coisa\n";
 }
 
-
+#Convencoes:
+my $TRUE = 1;
+my $FALSE = 0;
+#
 
 #loop eterno do programa
-for (my $opcode = "nothing"; $opcode ne "END"; $topo--) {
+for (my $opcode = "nothing"; $opcode ne "END"; $pcounter++) {
 
 	my $valor;
 
-	if ($programa[$topo] =~ /([a-zA-Z]{3,4})/) {
+	if ($programa[$pcounter] =~ /([a-zA-Z]{2,4})/) {
 		$opcode = $1;
 	}
-	if ($programa[$topo] =~ /([0-9]+)/) {
+	if ($programa[$pcounter] =~ /([0-9]+)/) {
 		$valor = $1;
 	}
 	given ($opcode) {
@@ -98,10 +100,7 @@ foreach my $xis (@dados) {
 
 #==== SUB-ROTINAS ====
 #
-#Convencoes:
-my $TRUE = 1;
-my $FALSE = 0;
-#
+
 #==== Manipulacao de pilhas
 #PUSH
 sub psh {
@@ -131,37 +130,37 @@ sub add {
 sub sub {
 	my $valor1 = pop @dados;
 	my $valor2 = pop @dados;
-	push @dados, ($valor1 - $valor2);
+	push @dados, ($valor2 - $valor1);
 }
 
 #MUL
 sub mul {
 	my $valor1 = pop @dados;
 	my $valor2 = pop @dados;
-	push @dados, ($valor1 * $valor2);
+	push @dados, ($valor2 * $valor1);
 }
 
 #DIV
 sub div {
 	my $valor1 = pop @dados;
 	my $valor2 = pop @dados;
-	push @dados, ($valor1 / $valor2);
+	push @dados, ($valor2 / $valor1);
 }
 
 #==== Desvios (condicionais ou nao)
 #JMP
 sub jmp {
-	$topo = $_[0];
+	$pcounter = $_[0];
 }
 
 #JIT
 sub jit {
-	$topo = $_[0] if (pop @dados == $TRUE);
+	$pcounter = $_[0] if ((pop @dados) == $TRUE);
 }
 
 #JIF
 sub jif {
-	$topo = $_[0] if (pop @dados == $FALSE);
+	$pcounter = $_[0] if ((pop @dados) == $FALSE);
 }
 
 #==== Comparacoes
@@ -212,7 +211,7 @@ sub ne {
 #==== Acesso a memoria
 #STO
 sub sto {
-	$memoria[$_[0]] = @dados;
+	$memoria[$_[0]] = pop @dados;
 }
 
 #RCL
