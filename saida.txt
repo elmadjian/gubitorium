@@ -1,0 +1,1182 @@
+PUSH 1
+PUSH 1
+STO 0
+STO 1
+PUSH 10
+STO 2
+RCL 0
+RCL 1
+DUP
+STO 0
+ADD
+DUP
+STO 1
+PRN
+RCL 2
+PUSH 1
+SUB
+DUP
+STO 2
+PUSH 0
+EQ
+JIF 6
+END
+OP: PUSH
+VL: 1
+DADOS[0]: 1
+----------
+OP: PUSH
+VL: 1
+DADOS[1]: 1
+DADOS[0]: 1
+----------
+OP: STO
+VL: 0
+DADOS[0]: 1
+MEM[0]: 1
+----------
+OP: STO
+VL: 1
+MEM[1]: 1
+MEM[0]: 1
+----------
+OP: PUSH
+VL: 10
+DADOS[0]: 10
+MEM[1]: 1
+MEM[0]: 1
+----------
+OP: STO
+VL: 2
+MEM[2]: 10
+MEM[1]: 1
+MEM[0]: 1
+----------
+OP: RCL
+VL: 0
+DADOS[0]: 1
+MEM[2]: 10
+MEM[1]: 1
+MEM[0]: 1
+----------
+OP: RCL
+VL: 1
+DADOS[1]: 1
+DADOS[0]: 1
+MEM[2]: 10
+MEM[1]: 1
+MEM[0]: 1
+----------
+OP: DUP
+DADOS[2]: 1
+DADOS[1]: 1
+DADOS[0]: 1
+MEM[2]: 10
+MEM[1]: 1
+MEM[0]: 1
+----------
+OP: STO
+VL: 0
+DADOS[1]: 1
+DADOS[0]: 1
+MEM[2]: 10
+MEM[1]: 1
+MEM[0]: 1
+----------
+OP: ADD
+DADOS[0]: 2
+MEM[2]: 10
+MEM[1]: 1
+MEM[0]: 1
+----------
+OP: DUP
+DADOS[1]: 2
+DADOS[0]: 2
+MEM[2]: 10
+MEM[1]: 1
+MEM[0]: 1
+----------
+OP: STO
+VL: 1
+DADOS[0]: 2
+MEM[2]: 10
+MEM[1]: 2
+MEM[0]: 1
+----------
+OP: PRN
+2
+MEM[2]: 10
+MEM[1]: 2
+MEM[0]: 1
+----------
+OP: RCL
+VL: 2
+DADOS[0]: 10
+MEM[2]: 10
+MEM[1]: 2
+MEM[0]: 1
+----------
+OP: PUSH
+VL: 1
+DADOS[1]: 1
+DADOS[0]: 10
+MEM[2]: 10
+MEM[1]: 2
+MEM[0]: 1
+----------
+OP: SUB
+DADOS[0]: 9
+MEM[2]: 10
+MEM[1]: 2
+MEM[0]: 1
+----------
+OP: DUP
+DADOS[1]: 9
+DADOS[0]: 9
+MEM[2]: 10
+MEM[1]: 2
+MEM[0]: 1
+----------
+OP: STO
+VL: 2
+DADOS[0]: 9
+MEM[2]: 9
+MEM[1]: 2
+MEM[0]: 1
+----------
+OP: PUSH
+VL: 0
+DADOS[1]: 0
+DADOS[0]: 9
+MEM[2]: 9
+MEM[1]: 2
+MEM[0]: 1
+----------
+OP: EQ
+DADOS[0]: 0
+MEM[2]: 9
+MEM[1]: 2
+MEM[0]: 1
+----------
+OP: JIF
+VL: 6
+MEM[2]: 9
+MEM[1]: 2
+MEM[0]: 1
+----------
+OP: RCL
+VL: 0
+DADOS[0]: 1
+MEM[2]: 9
+MEM[1]: 2
+MEM[0]: 1
+----------
+OP: RCL
+VL: 1
+DADOS[1]: 2
+DADOS[0]: 1
+MEM[2]: 9
+MEM[1]: 2
+MEM[0]: 1
+----------
+OP: DUP
+DADOS[2]: 2
+DADOS[1]: 2
+DADOS[0]: 1
+MEM[2]: 9
+MEM[1]: 2
+MEM[0]: 1
+----------
+OP: STO
+VL: 0
+DADOS[1]: 2
+DADOS[0]: 1
+MEM[2]: 9
+MEM[1]: 2
+MEM[0]: 2
+----------
+OP: ADD
+DADOS[0]: 3
+MEM[2]: 9
+MEM[1]: 2
+MEM[0]: 2
+----------
+OP: DUP
+DADOS[1]: 3
+DADOS[0]: 3
+MEM[2]: 9
+MEM[1]: 2
+MEM[0]: 2
+----------
+OP: STO
+VL: 1
+DADOS[0]: 3
+MEM[2]: 9
+MEM[1]: 3
+MEM[0]: 2
+----------
+OP: PRN
+3
+MEM[2]: 9
+MEM[1]: 3
+MEM[0]: 2
+----------
+OP: RCL
+VL: 2
+DADOS[0]: 9
+MEM[2]: 9
+MEM[1]: 3
+MEM[0]: 2
+----------
+OP: PUSH
+VL: 1
+DADOS[1]: 1
+DADOS[0]: 9
+MEM[2]: 9
+MEM[1]: 3
+MEM[0]: 2
+----------
+OP: SUB
+DADOS[0]: 8
+MEM[2]: 9
+MEM[1]: 3
+MEM[0]: 2
+----------
+OP: DUP
+DADOS[1]: 8
+DADOS[0]: 8
+MEM[2]: 9
+MEM[1]: 3
+MEM[0]: 2
+----------
+OP: STO
+VL: 2
+DADOS[0]: 8
+MEM[2]: 8
+MEM[1]: 3
+MEM[0]: 2
+----------
+OP: PUSH
+VL: 0
+DADOS[1]: 0
+DADOS[0]: 8
+MEM[2]: 8
+MEM[1]: 3
+MEM[0]: 2
+----------
+OP: EQ
+DADOS[0]: 0
+MEM[2]: 8
+MEM[1]: 3
+MEM[0]: 2
+----------
+OP: JIF
+VL: 6
+MEM[2]: 8
+MEM[1]: 3
+MEM[0]: 2
+----------
+OP: RCL
+VL: 0
+DADOS[0]: 2
+MEM[2]: 8
+MEM[1]: 3
+MEM[0]: 2
+----------
+OP: RCL
+VL: 1
+DADOS[1]: 3
+DADOS[0]: 2
+MEM[2]: 8
+MEM[1]: 3
+MEM[0]: 2
+----------
+OP: DUP
+DADOS[2]: 3
+DADOS[1]: 3
+DADOS[0]: 2
+MEM[2]: 8
+MEM[1]: 3
+MEM[0]: 2
+----------
+OP: STO
+VL: 0
+DADOS[1]: 3
+DADOS[0]: 2
+MEM[2]: 8
+MEM[1]: 3
+MEM[0]: 3
+----------
+OP: ADD
+DADOS[0]: 5
+MEM[2]: 8
+MEM[1]: 3
+MEM[0]: 3
+----------
+OP: DUP
+DADOS[1]: 5
+DADOS[0]: 5
+MEM[2]: 8
+MEM[1]: 3
+MEM[0]: 3
+----------
+OP: STO
+VL: 1
+DADOS[0]: 5
+MEM[2]: 8
+MEM[1]: 5
+MEM[0]: 3
+----------
+OP: PRN
+5
+MEM[2]: 8
+MEM[1]: 5
+MEM[0]: 3
+----------
+OP: RCL
+VL: 2
+DADOS[0]: 8
+MEM[2]: 8
+MEM[1]: 5
+MEM[0]: 3
+----------
+OP: PUSH
+VL: 1
+DADOS[1]: 1
+DADOS[0]: 8
+MEM[2]: 8
+MEM[1]: 5
+MEM[0]: 3
+----------
+OP: SUB
+DADOS[0]: 7
+MEM[2]: 8
+MEM[1]: 5
+MEM[0]: 3
+----------
+OP: DUP
+DADOS[1]: 7
+DADOS[0]: 7
+MEM[2]: 8
+MEM[1]: 5
+MEM[0]: 3
+----------
+OP: STO
+VL: 2
+DADOS[0]: 7
+MEM[2]: 7
+MEM[1]: 5
+MEM[0]: 3
+----------
+OP: PUSH
+VL: 0
+DADOS[1]: 0
+DADOS[0]: 7
+MEM[2]: 7
+MEM[1]: 5
+MEM[0]: 3
+----------
+OP: EQ
+DADOS[0]: 0
+MEM[2]: 7
+MEM[1]: 5
+MEM[0]: 3
+----------
+OP: JIF
+VL: 6
+MEM[2]: 7
+MEM[1]: 5
+MEM[0]: 3
+----------
+OP: RCL
+VL: 0
+DADOS[0]: 3
+MEM[2]: 7
+MEM[1]: 5
+MEM[0]: 3
+----------
+OP: RCL
+VL: 1
+DADOS[1]: 5
+DADOS[0]: 3
+MEM[2]: 7
+MEM[1]: 5
+MEM[0]: 3
+----------
+OP: DUP
+DADOS[2]: 5
+DADOS[1]: 5
+DADOS[0]: 3
+MEM[2]: 7
+MEM[1]: 5
+MEM[0]: 3
+----------
+OP: STO
+VL: 0
+DADOS[1]: 5
+DADOS[0]: 3
+MEM[2]: 7
+MEM[1]: 5
+MEM[0]: 5
+----------
+OP: ADD
+DADOS[0]: 8
+MEM[2]: 7
+MEM[1]: 5
+MEM[0]: 5
+----------
+OP: DUP
+DADOS[1]: 8
+DADOS[0]: 8
+MEM[2]: 7
+MEM[1]: 5
+MEM[0]: 5
+----------
+OP: STO
+VL: 1
+DADOS[0]: 8
+MEM[2]: 7
+MEM[1]: 8
+MEM[0]: 5
+----------
+OP: PRN
+8
+MEM[2]: 7
+MEM[1]: 8
+MEM[0]: 5
+----------
+OP: RCL
+VL: 2
+DADOS[0]: 7
+MEM[2]: 7
+MEM[1]: 8
+MEM[0]: 5
+----------
+OP: PUSH
+VL: 1
+DADOS[1]: 1
+DADOS[0]: 7
+MEM[2]: 7
+MEM[1]: 8
+MEM[0]: 5
+----------
+OP: SUB
+DADOS[0]: 6
+MEM[2]: 7
+MEM[1]: 8
+MEM[0]: 5
+----------
+OP: DUP
+DADOS[1]: 6
+DADOS[0]: 6
+MEM[2]: 7
+MEM[1]: 8
+MEM[0]: 5
+----------
+OP: STO
+VL: 2
+DADOS[0]: 6
+MEM[2]: 6
+MEM[1]: 8
+MEM[0]: 5
+----------
+OP: PUSH
+VL: 0
+DADOS[1]: 0
+DADOS[0]: 6
+MEM[2]: 6
+MEM[1]: 8
+MEM[0]: 5
+----------
+OP: EQ
+DADOS[0]: 0
+MEM[2]: 6
+MEM[1]: 8
+MEM[0]: 5
+----------
+OP: JIF
+VL: 6
+MEM[2]: 6
+MEM[1]: 8
+MEM[0]: 5
+----------
+OP: RCL
+VL: 0
+DADOS[0]: 5
+MEM[2]: 6
+MEM[1]: 8
+MEM[0]: 5
+----------
+OP: RCL
+VL: 1
+DADOS[1]: 8
+DADOS[0]: 5
+MEM[2]: 6
+MEM[1]: 8
+MEM[0]: 5
+----------
+OP: DUP
+DADOS[2]: 8
+DADOS[1]: 8
+DADOS[0]: 5
+MEM[2]: 6
+MEM[1]: 8
+MEM[0]: 5
+----------
+OP: STO
+VL: 0
+DADOS[1]: 8
+DADOS[0]: 5
+MEM[2]: 6
+MEM[1]: 8
+MEM[0]: 8
+----------
+OP: ADD
+DADOS[0]: 13
+MEM[2]: 6
+MEM[1]: 8
+MEM[0]: 8
+----------
+OP: DUP
+DADOS[1]: 13
+DADOS[0]: 13
+MEM[2]: 6
+MEM[1]: 8
+MEM[0]: 8
+----------
+OP: STO
+VL: 1
+DADOS[0]: 13
+MEM[2]: 6
+MEM[1]: 13
+MEM[0]: 8
+----------
+OP: PRN
+13
+MEM[2]: 6
+MEM[1]: 13
+MEM[0]: 8
+----------
+OP: RCL
+VL: 2
+DADOS[0]: 6
+MEM[2]: 6
+MEM[1]: 13
+MEM[0]: 8
+----------
+OP: PUSH
+VL: 1
+DADOS[1]: 1
+DADOS[0]: 6
+MEM[2]: 6
+MEM[1]: 13
+MEM[0]: 8
+----------
+OP: SUB
+DADOS[0]: 5
+MEM[2]: 6
+MEM[1]: 13
+MEM[0]: 8
+----------
+OP: DUP
+DADOS[1]: 5
+DADOS[0]: 5
+MEM[2]: 6
+MEM[1]: 13
+MEM[0]: 8
+----------
+OP: STO
+VL: 2
+DADOS[0]: 5
+MEM[2]: 5
+MEM[1]: 13
+MEM[0]: 8
+----------
+OP: PUSH
+VL: 0
+DADOS[1]: 0
+DADOS[0]: 5
+MEM[2]: 5
+MEM[1]: 13
+MEM[0]: 8
+----------
+OP: EQ
+DADOS[0]: 0
+MEM[2]: 5
+MEM[1]: 13
+MEM[0]: 8
+----------
+OP: JIF
+VL: 6
+MEM[2]: 5
+MEM[1]: 13
+MEM[0]: 8
+----------
+OP: RCL
+VL: 0
+DADOS[0]: 8
+MEM[2]: 5
+MEM[1]: 13
+MEM[0]: 8
+----------
+OP: RCL
+VL: 1
+DADOS[1]: 13
+DADOS[0]: 8
+MEM[2]: 5
+MEM[1]: 13
+MEM[0]: 8
+----------
+OP: DUP
+DADOS[2]: 13
+DADOS[1]: 13
+DADOS[0]: 8
+MEM[2]: 5
+MEM[1]: 13
+MEM[0]: 8
+----------
+OP: STO
+VL: 0
+DADOS[1]: 13
+DADOS[0]: 8
+MEM[2]: 5
+MEM[1]: 13
+MEM[0]: 13
+----------
+OP: ADD
+DADOS[0]: 21
+MEM[2]: 5
+MEM[1]: 13
+MEM[0]: 13
+----------
+OP: DUP
+DADOS[1]: 21
+DADOS[0]: 21
+MEM[2]: 5
+MEM[1]: 13
+MEM[0]: 13
+----------
+OP: STO
+VL: 1
+DADOS[0]: 21
+MEM[2]: 5
+MEM[1]: 21
+MEM[0]: 13
+----------
+OP: PRN
+21
+MEM[2]: 5
+MEM[1]: 21
+MEM[0]: 13
+----------
+OP: RCL
+VL: 2
+DADOS[0]: 5
+MEM[2]: 5
+MEM[1]: 21
+MEM[0]: 13
+----------
+OP: PUSH
+VL: 1
+DADOS[1]: 1
+DADOS[0]: 5
+MEM[2]: 5
+MEM[1]: 21
+MEM[0]: 13
+----------
+OP: SUB
+DADOS[0]: 4
+MEM[2]: 5
+MEM[1]: 21
+MEM[0]: 13
+----------
+OP: DUP
+DADOS[1]: 4
+DADOS[0]: 4
+MEM[2]: 5
+MEM[1]: 21
+MEM[0]: 13
+----------
+OP: STO
+VL: 2
+DADOS[0]: 4
+MEM[2]: 4
+MEM[1]: 21
+MEM[0]: 13
+----------
+OP: PUSH
+VL: 0
+DADOS[1]: 0
+DADOS[0]: 4
+MEM[2]: 4
+MEM[1]: 21
+MEM[0]: 13
+----------
+OP: EQ
+DADOS[0]: 0
+MEM[2]: 4
+MEM[1]: 21
+MEM[0]: 13
+----------
+OP: JIF
+VL: 6
+MEM[2]: 4
+MEM[1]: 21
+MEM[0]: 13
+----------
+OP: RCL
+VL: 0
+DADOS[0]: 13
+MEM[2]: 4
+MEM[1]: 21
+MEM[0]: 13
+----------
+OP: RCL
+VL: 1
+DADOS[1]: 21
+DADOS[0]: 13
+MEM[2]: 4
+MEM[1]: 21
+MEM[0]: 13
+----------
+OP: DUP
+DADOS[2]: 21
+DADOS[1]: 21
+DADOS[0]: 13
+MEM[2]: 4
+MEM[1]: 21
+MEM[0]: 13
+----------
+OP: STO
+VL: 0
+DADOS[1]: 21
+DADOS[0]: 13
+MEM[2]: 4
+MEM[1]: 21
+MEM[0]: 21
+----------
+OP: ADD
+DADOS[0]: 34
+MEM[2]: 4
+MEM[1]: 21
+MEM[0]: 21
+----------
+OP: DUP
+DADOS[1]: 34
+DADOS[0]: 34
+MEM[2]: 4
+MEM[1]: 21
+MEM[0]: 21
+----------
+OP: STO
+VL: 1
+DADOS[0]: 34
+MEM[2]: 4
+MEM[1]: 34
+MEM[0]: 21
+----------
+OP: PRN
+34
+MEM[2]: 4
+MEM[1]: 34
+MEM[0]: 21
+----------
+OP: RCL
+VL: 2
+DADOS[0]: 4
+MEM[2]: 4
+MEM[1]: 34
+MEM[0]: 21
+----------
+OP: PUSH
+VL: 1
+DADOS[1]: 1
+DADOS[0]: 4
+MEM[2]: 4
+MEM[1]: 34
+MEM[0]: 21
+----------
+OP: SUB
+DADOS[0]: 3
+MEM[2]: 4
+MEM[1]: 34
+MEM[0]: 21
+----------
+OP: DUP
+DADOS[1]: 3
+DADOS[0]: 3
+MEM[2]: 4
+MEM[1]: 34
+MEM[0]: 21
+----------
+OP: STO
+VL: 2
+DADOS[0]: 3
+MEM[2]: 3
+MEM[1]: 34
+MEM[0]: 21
+----------
+OP: PUSH
+VL: 0
+DADOS[1]: 0
+DADOS[0]: 3
+MEM[2]: 3
+MEM[1]: 34
+MEM[0]: 21
+----------
+OP: EQ
+DADOS[0]: 0
+MEM[2]: 3
+MEM[1]: 34
+MEM[0]: 21
+----------
+OP: JIF
+VL: 6
+MEM[2]: 3
+MEM[1]: 34
+MEM[0]: 21
+----------
+OP: RCL
+VL: 0
+DADOS[0]: 21
+MEM[2]: 3
+MEM[1]: 34
+MEM[0]: 21
+----------
+OP: RCL
+VL: 1
+DADOS[1]: 34
+DADOS[0]: 21
+MEM[2]: 3
+MEM[1]: 34
+MEM[0]: 21
+----------
+OP: DUP
+DADOS[2]: 34
+DADOS[1]: 34
+DADOS[0]: 21
+MEM[2]: 3
+MEM[1]: 34
+MEM[0]: 21
+----------
+OP: STO
+VL: 0
+DADOS[1]: 34
+DADOS[0]: 21
+MEM[2]: 3
+MEM[1]: 34
+MEM[0]: 34
+----------
+OP: ADD
+DADOS[0]: 55
+MEM[2]: 3
+MEM[1]: 34
+MEM[0]: 34
+----------
+OP: DUP
+DADOS[1]: 55
+DADOS[0]: 55
+MEM[2]: 3
+MEM[1]: 34
+MEM[0]: 34
+----------
+OP: STO
+VL: 1
+DADOS[0]: 55
+MEM[2]: 3
+MEM[1]: 55
+MEM[0]: 34
+----------
+OP: PRN
+55
+MEM[2]: 3
+MEM[1]: 55
+MEM[0]: 34
+----------
+OP: RCL
+VL: 2
+DADOS[0]: 3
+MEM[2]: 3
+MEM[1]: 55
+MEM[0]: 34
+----------
+OP: PUSH
+VL: 1
+DADOS[1]: 1
+DADOS[0]: 3
+MEM[2]: 3
+MEM[1]: 55
+MEM[0]: 34
+----------
+OP: SUB
+DADOS[0]: 2
+MEM[2]: 3
+MEM[1]: 55
+MEM[0]: 34
+----------
+OP: DUP
+DADOS[1]: 2
+DADOS[0]: 2
+MEM[2]: 3
+MEM[1]: 55
+MEM[0]: 34
+----------
+OP: STO
+VL: 2
+DADOS[0]: 2
+MEM[2]: 2
+MEM[1]: 55
+MEM[0]: 34
+----------
+OP: PUSH
+VL: 0
+DADOS[1]: 0
+DADOS[0]: 2
+MEM[2]: 2
+MEM[1]: 55
+MEM[0]: 34
+----------
+OP: EQ
+DADOS[0]: 0
+MEM[2]: 2
+MEM[1]: 55
+MEM[0]: 34
+----------
+OP: JIF
+VL: 6
+MEM[2]: 2
+MEM[1]: 55
+MEM[0]: 34
+----------
+OP: RCL
+VL: 0
+DADOS[0]: 34
+MEM[2]: 2
+MEM[1]: 55
+MEM[0]: 34
+----------
+OP: RCL
+VL: 1
+DADOS[1]: 55
+DADOS[0]: 34
+MEM[2]: 2
+MEM[1]: 55
+MEM[0]: 34
+----------
+OP: DUP
+DADOS[2]: 55
+DADOS[1]: 55
+DADOS[0]: 34
+MEM[2]: 2
+MEM[1]: 55
+MEM[0]: 34
+----------
+OP: STO
+VL: 0
+DADOS[1]: 55
+DADOS[0]: 34
+MEM[2]: 2
+MEM[1]: 55
+MEM[0]: 55
+----------
+OP: ADD
+DADOS[0]: 89
+MEM[2]: 2
+MEM[1]: 55
+MEM[0]: 55
+----------
+OP: DUP
+DADOS[1]: 89
+DADOS[0]: 89
+MEM[2]: 2
+MEM[1]: 55
+MEM[0]: 55
+----------
+OP: STO
+VL: 1
+DADOS[0]: 89
+MEM[2]: 2
+MEM[1]: 89
+MEM[0]: 55
+----------
+OP: PRN
+89
+MEM[2]: 2
+MEM[1]: 89
+MEM[0]: 55
+----------
+OP: RCL
+VL: 2
+DADOS[0]: 2
+MEM[2]: 2
+MEM[1]: 89
+MEM[0]: 55
+----------
+OP: PUSH
+VL: 1
+DADOS[1]: 1
+DADOS[0]: 2
+MEM[2]: 2
+MEM[1]: 89
+MEM[0]: 55
+----------
+OP: SUB
+DADOS[0]: 1
+MEM[2]: 2
+MEM[1]: 89
+MEM[0]: 55
+----------
+OP: DUP
+DADOS[1]: 1
+DADOS[0]: 1
+MEM[2]: 2
+MEM[1]: 89
+MEM[0]: 55
+----------
+OP: STO
+VL: 2
+DADOS[0]: 1
+MEM[2]: 1
+MEM[1]: 89
+MEM[0]: 55
+----------
+OP: PUSH
+VL: 0
+DADOS[1]: 0
+DADOS[0]: 1
+MEM[2]: 1
+MEM[1]: 89
+MEM[0]: 55
+----------
+OP: EQ
+DADOS[0]: 0
+MEM[2]: 1
+MEM[1]: 89
+MEM[0]: 55
+----------
+OP: JIF
+VL: 6
+MEM[2]: 1
+MEM[1]: 89
+MEM[0]: 55
+----------
+OP: RCL
+VL: 0
+DADOS[0]: 55
+MEM[2]: 1
+MEM[1]: 89
+MEM[0]: 55
+----------
+OP: RCL
+VL: 1
+DADOS[1]: 89
+DADOS[0]: 55
+MEM[2]: 1
+MEM[1]: 89
+MEM[0]: 55
+----------
+OP: DUP
+DADOS[2]: 89
+DADOS[1]: 89
+DADOS[0]: 55
+MEM[2]: 1
+MEM[1]: 89
+MEM[0]: 55
+----------
+OP: STO
+VL: 0
+DADOS[1]: 89
+DADOS[0]: 55
+MEM[2]: 1
+MEM[1]: 89
+MEM[0]: 89
+----------
+OP: ADD
+DADOS[0]: 144
+MEM[2]: 1
+MEM[1]: 89
+MEM[0]: 89
+----------
+OP: DUP
+DADOS[1]: 144
+DADOS[0]: 144
+MEM[2]: 1
+MEM[1]: 89
+MEM[0]: 89
+----------
+OP: STO
+VL: 1
+DADOS[0]: 144
+MEM[2]: 1
+MEM[1]: 144
+MEM[0]: 89
+----------
+OP: PRN
+144
+MEM[2]: 1
+MEM[1]: 144
+MEM[0]: 89
+----------
+OP: RCL
+VL: 2
+DADOS[0]: 1
+MEM[2]: 1
+MEM[1]: 144
+MEM[0]: 89
+----------
+OP: PUSH
+VL: 1
+DADOS[1]: 1
+DADOS[0]: 1
+MEM[2]: 1
+MEM[1]: 144
+MEM[0]: 89
+----------
+OP: SUB
+DADOS[0]: 0
+MEM[2]: 1
+MEM[1]: 144
+MEM[0]: 89
+----------
+OP: DUP
+DADOS[1]: 0
+DADOS[0]: 0
+MEM[2]: 1
+MEM[1]: 144
+MEM[0]: 89
+----------
+OP: STO
+VL: 2
+DADOS[0]: 0
+MEM[2]: 0
+MEM[1]: 144
+MEM[0]: 89
+----------
+OP: PUSH
+VL: 0
+DADOS[1]: 0
+DADOS[0]: 0
+MEM[2]: 0
+MEM[1]: 144
+MEM[0]: 89
+----------
+OP: EQ
+DADOS[0]: 1
+MEM[2]: 0
+MEM[1]: 144
+MEM[0]: 89
+----------
+OP: JIF
+VL: 6
+MEM[2]: 0
+MEM[1]: 144
+MEM[0]: 89
+----------
+OP: END
+MEM[2]: 0
+MEM[1]: 144
+MEM[0]: 89
+----------
+memoria_ 89
+memoria_ 144
+memoria_ 0

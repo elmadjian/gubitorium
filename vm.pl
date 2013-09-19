@@ -32,7 +32,7 @@ my $pcounter = 0;          #"ponteiro" de instrucoes
 
 #==== PROGRAMA ======
 
-my $file = "teste.txt";
+my $file = "programa.txt";
 #Escrevendo a pilha de instrucoes
 open my $FH, '<', $file or die "Não consegui abrir o arquivo: $!";
 while (<$FH>) {

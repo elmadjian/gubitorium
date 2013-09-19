@@ -1,3 +1,26 @@
+PUSH 1
+PUSH 1
+STO 0
+STO 1
+PUSH 10
+STO 2
+RCL 0
+RCL 1
+DUP
+STO 0
+ADD
+DUP
+STO 1
+PRN
+RCL 2
+PUSH 1
+SUB
+DUP
+STO 2
+PUSH 0
+EQ
+JIF 6
+END
 #!/usr/bin/env perl 
 #===============================================================================
 #
@@ -29,7 +52,7 @@ my %hash;
 while (<>) {
 	$_ =~ s/[#].*//;
 	if ($_ =~ /\w/) {
-		$_ =~ /\s*(.*\:)?\s*?([A-Z]{2,4})\s*([-]?\w*)/;
+		$_ =~ /\s*(.*\:)?\s*?([A-Z]{2,4})\s*(\w*)/;
 		my $regex1 = $1;
 		my $regex2 = $2;
 		my $regex3 = $3;
@@ -41,8 +64,8 @@ while (<>) {
 		if ($regex2 =~ /(JMP|JIT|JIF)/) {
 			$regex3 = $hash{$regex3};
 		}
-		$programa[$counter][0] = ($regex2?$regex2:"");
-		$programa[$counter][1] = ($regex3?$regex3:"");
+		$programa[$counter][0] = $regex2;
+		$programa[$counter][1] = $regex3;
 
 		$counter++;
 	}	
