@@ -29,7 +29,7 @@ my %hash;
 while (<>) {
 	$_ =~ s/[#].*//;
 	if ($_ =~ /\w/) {
-		$_ =~ /\s*(.*\:)?\s*?([A-Z]{2,4})\s*(\w*)/;
+		$_ =~ /\s*(.*\:)?\s*?([A-Z]{2,4})\s*([-]?\w*)/;
 		my $regex1 = $1;
 		my $regex2 = $2;
 		my $regex3 = $3;
@@ -41,8 +41,8 @@ while (<>) {
 		if ($regex2 =~ /(JMP|JIT|JIF)/) {
 			$regex3 = $hash{$regex3};
 		}
-		$programa[$counter][0] = $regex2;
-		$programa[$counter][1] = $regex3;
+		$programa[$counter][0] = ($regex2?$regex2:"");
+		$programa[$counter][1] = ($regex3?$regex3:"");
 
 		$counter++;
 	}	
